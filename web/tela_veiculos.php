@@ -92,6 +92,7 @@
 																									  </div>
 																									  
 																									  <h1 class="header center orange-text">Tabela de Veículos</h1>
+                                                                                                                                                                                                        
 																									  	<table>
 																										<thead>
 																										  <tr>
@@ -115,7 +116,16 @@
 																										  
 																										</tbody>
 																									  </table>
-																									 
+																									 </div>
+																										  <div class="row center">
+																											<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Editar</a>
+																											<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Remover</a>
+																										  </div>
+																										  <br><br>
+
+																										</div>
+																									  </div>
+																									  
 
 
   <div class="container">
