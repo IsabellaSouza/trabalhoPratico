@@ -67,20 +67,19 @@ require_once('./nav.php');
       </div>
       
       <br><br>
-
-    </div>
-  </div>
-    <div class="row"> 
+      <div class="row"> 
         <h1 class="header center orange-text">Tabela de Locações</h1>
         <table class="highlight">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>CPF</th>
                 <th>Nome do Cliente</th>  
                 <th>Veículo Placa</th>  
                 <th>Data de Locação</th>  
                 <th>Data de Devolução</th>  
                 <th>Quilometragem</th>    
+                <th>Status</th>
             </tr>
         </thead>
 
@@ -93,7 +92,10 @@ require_once('./nav.php');
 
         </tbody>
         </table>
-    </div>         
+    </div>
+    </div>
+  </div>
+             
     <div class="row center">
         <a id="buttonEditar" class="btn-large waves-effect waves-light orange">Editar</a>
         <a id="buttonLer" class="btn-large waves-effect waves-light orange">Ler</a>
