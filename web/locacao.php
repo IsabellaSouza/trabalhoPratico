@@ -62,36 +62,44 @@ require_once('./nav.php');
           </div>
       </div>
       <div class="row center">
-        <a id="download-button" class="btn-large waves-effect waves-light orange">Cadastrar</a>
+        <a id="buttonSalvar" class="btn-large waves-effect waves-light orange">Salvar</a>
+        
       </div>
+      
       <br><br>
 
     </div>
   </div>
-
-   <table>
+    <div class="row"> 
+        <h1 class="header center orange-text">Tabela de Locações</h1>
+        <table class="highlight">
         <thead>
-          <tr>
-              <th>CPF</th>
-              <th>Nome do Cliente</th>
-              <th>Veículo Placa</th>
-              <th>Data de Locação</th>
-              <th>Data de Devolução</th>
-              <th>Quilometragem</th>
-          </tr>
+            <tr>
+                <th>CPF</th>
+                <th>Nome do Cliente</th>  
+                <th>Veículo Placa</th>  
+                <th>Data de Locação</th>  
+                <th>Data de Devolução</th>  
+                <th>Quilometragem</th>    
+            </tr>
         </thead>
 
         <tbody>
           <tr>
-            <!--<td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-          </tr>-->
-          
-        </tbody>
-      </table>
-            
+            <!--<td></td>
+            <td></td>
+            <td></td>-->
+          </tr>
 
+        </tbody>
+        </table>
+    </div>         
+    <div class="row center">
+        <a id="buttonEditar" class="btn-large waves-effect waves-light orange">Editar</a>
+        <a id="buttonLer" class="btn-large waves-effect waves-light orange">Ler</a>
+        <a id="buttonApagar" class="btn-large waves-effect waves-light orange">Apagar</a>
+        <a id="buttonEncerrar" class="btn-large waves-effect waves-light orange">Encerrar</a>
+    </div>
   <div class="container">
     <div class="section">
 
