@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Cadastro de Veículo</title>
+  <title>Login</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,57 +20,31 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-													  <h1 class="header center orange-text">Cadastro de Funcionários</h1>
+													  <h1 class="header center orange-text">Login</h1>
 													  <div class="row center">
 														 <div class="row">
 															<form class="col s12">
 															  <div class="row">
 																										<div class="input-field col s6">
-																									  <input id="nome" type="text" class="validate">
-																									  <label for="nome">NOME</label>
+																									  <input id="usuario" type="text" class="validate">
+																									  <label for="usuario">Usuário</label>
 																										</div>
 																										
 																								
-																									<div class="input-field col s6">
-																									  <input id="rg" type="text" class="validate">
-																									  <label for="rg">RG</label>
-																									</div>
+																									<div class="row">
+																										<div class="input-field col s6">
+																										<input id="password" type="password" class="validate">
+																											<label for="password">Senha</label>
+																											</div>
+																										</div>
 															 
 															  
-																										<div class="input-field col s6">
-																									  <input id="cpf" type="text" class="validate">
-																									  <label for="cpf">CPF</label>
-																										</div>
 																										
-																								
-																									<div class="input-field col s6">
-																									  <input id="endereco" type="text" class="validate">
-																									  <label for="endereco">ENDEREÇO</label>
-																									</div>
-																									
-																									<div class="input-field col s6">
-																									  <input id="data_admicao" type="text" class="datepicker">
-																									  <label for="data_admicao">Data de Admição</label>
-																										</div>
-																										
-																										<div class="input-field col s6">
-																									  <input id="data_demicao" type="text" class="datepicker">
-																									  <label for="data_demicao">Data de Demição</label>
-																										</div>
 																								
 																									
 																										
 																										
-																										<!-- Botao -->
-																										
-																									  <div class="switch">
-																										<label>
-																										  Inativo
-																										  <input type="checkbox">
-																										  <span class="lever"></span>
-																										  Ativo
-																										</label>
-																									  </div>
+																										 
 															
 																									
 																											
@@ -81,7 +55,7 @@
         
 																										  </div>
 																										  <div class="row center">
-																											<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Salvar</a>
+																											<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Entrar</a>
 																											
 																										  </div>
 																										  <br><br>
@@ -89,41 +63,7 @@
 																										</div>
 																									  </div>
 																									  
-																									  <h1 class="header center orange-text">Tabela De Funcionários</h1>
-																									  	<table>
-																										<thead>
-																										  <tr>
-																											  <th>Nome</th>
-																											  <th>RG</th>
-																											  <th>CPF</th>
-																											  <th>Endereço</th>
-																											  <th>Admição</th>
-																											  <th>Demição</th>
-																											 
-																											  <th> Status Ativo/Inativo</th>
-																										  </tr>
-																										</thead>
-
-																										<tbody>
-																										  <tr>
-																											  <!-- <td></td>
-																											<td></td>
-																											<td></td>
-																										  </tr> -->
-																										  
-																										</tbody>
-																									  </table>
-																									 
-																									 </div>
-																										  <div class="row center">
-																											<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Editar</a>
-																											<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Remover</a>
-																											
-																										  </div>
-																										  <br><br>
-
-																										</div>
-																									  </div>
+																									  
 																									  
 																									  
 
