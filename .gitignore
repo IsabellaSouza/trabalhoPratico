@@ -134,6 +134,7 @@ fabric.properties
 
 ### NetBeans ###
 **/nbproject/private/
+/nbproject/
 nbbuild/
 dist/
 nbdist/
