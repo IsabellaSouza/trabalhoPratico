@@ -50,12 +50,12 @@
 																									
 																									<div class="input-field col s6">
 																									  <input id="data_admicao" type="text" class="datepicker">
-																									  <label for="data_admicao">Data de Admição</label>
+																									  <label for="data_admicao">Data de Admissão</label>
 																										</div>
 																										
 																										<div class="input-field col s6">
 																									  <input id="data_demicao" type="text" class="datepicker">
-																									  <label for="data_demicao">Data de Demição</label>
+																									  <label for="data_demicao">Data de Demissão</label>
 																										</div>
 																								
 																									

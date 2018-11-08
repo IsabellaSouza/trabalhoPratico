@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".cadastro_funcionarios" />
+        <activity android:name=".tabela_cadastros_funcionarios"></activity>
     </application>
 
 </manifest>
