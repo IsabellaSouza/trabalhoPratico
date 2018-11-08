@@ -17,14 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".cadastro_funcionarios" />
-        <activity android:name=".tabela_cadastros_funcionarios"></activity>
-
-        <activity android:name=".locacao" />
-        <activity android:name=".listaLocacao"></activity>
-
+        <activity android:name=".tabela_cadastros_funcionarios" />
+        <activity android:name=".listaLocacao" />
         <activity android:name=".carro" />
-        <activity android:name=".tabelaCarro"></activity>
-
+        <activity android:name=".tabelaCarro" />
+        <activity android:name=".location" />
+        <activity android:name=".login"></activity>
     </application>
 
 </manifest>

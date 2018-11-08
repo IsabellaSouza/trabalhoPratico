@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LocaPlus"
+        android:textColor="#E47833"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <EditText
+        android:id="@+id/editText17"
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="CPF ou Nome de Usuário"
+        android:inputType="textPersonName"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <EditText
+        android:id="@+id/editText18"
+        android:layout_width="229dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Entrar"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="435dp" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:text="Sair"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="435dp" />
+</android.support.constraint.ConstraintLayout>
