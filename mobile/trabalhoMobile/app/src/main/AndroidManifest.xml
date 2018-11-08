@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".carro" />
+        <activity android:name=".tabelaCarro"></activity>
     </application>
 
 </manifest>
