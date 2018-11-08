@@ -16,8 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".locacao" />
         <activity android:name=".listaLocacao"></activity>
+=======
+        <activity android:name=".carro" />
+        <activity android:name=".tabelaCarro"></activity>
+>>>>>>> 1d67a35eeb019c2257e4ce8c5d45f6b1f76f3a2c
     </application>
 
 </manifest>
