@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".carro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,10 +19,10 @@
         <activity android:name=".cadastro_funcionarios" />
         <activity android:name=".tabela_cadastros_funcionarios" />
         <activity android:name=".listaLocacao" />
-        <activity android:name=".carro" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".tabelaCarro" />
         <activity android:name=".location" />
-        <activity android:name=".login"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

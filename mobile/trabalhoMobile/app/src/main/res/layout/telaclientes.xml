@@ -19,7 +19,11 @@
         tools:layout_editor_absoluteY="280dp" />
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/editTextEndereco"
+=======
+        android:id="@+id/editTextCor"
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -33,7 +37,11 @@
         tools:layout_editor_absoluteY="216dp" />
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/editTextCpf"
+=======
+        android:id="@+id/editTextValorDaLocacao"
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -47,7 +55,7 @@
         tools:layout_editor_absoluteY="81dp" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editTextValorDoSeguro"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -71,7 +79,7 @@
         tools:layout_editor_absoluteY="419dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonFechar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"

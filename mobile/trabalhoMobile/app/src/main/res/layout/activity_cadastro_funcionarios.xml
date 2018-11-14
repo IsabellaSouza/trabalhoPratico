@@ -36,7 +36,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/editTextRg"
+=======
+        android:id="@+id/editTextModelo"
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
@@ -46,13 +50,21 @@
         android:ems="10"
         android:hint="RG"
         android:inputType="numberDecimal"
+<<<<<<< HEAD
         app:layout_constraintBottom_toTopOf="@+id/editTextCpf"
+=======
+        app:layout_constraintBottom_toTopOf="@+id/editTextValorDaLocacao"
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNome" />
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/editTextCpf"
+=======
+        android:id="@+id/editTextValorDaLocacao"
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
@@ -62,6 +74,7 @@
         android:ems="10"
         android:hint="CPF"
         android:inputType="numberDecimal"
+<<<<<<< HEAD
         app:layout_constraintBottom_toTopOf="@+id/editTextEndereco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +82,15 @@
 
     <EditText
         android:id="@+id/editTextEndereco"
+=======
+        app:layout_constraintBottom_toTopOf="@+id/editTextCor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextModelo" />
+
+    <EditText
+        android:id="@+id/editTextCor"
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -81,7 +103,11 @@
         app:layout_constraintBottom_toTopOf="@+id/editTextAdmissao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/editTextCpf" />
+=======
+        app:layout_constraintTop_toBottomOf="@+id/editTextValorDaLocacao" />
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
 
     <EditText
         android:id="@+id/editTextAdmissao"
@@ -97,7 +123,11 @@
         app:layout_constraintBottom_toTopOf="@+id/editTextDemissao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/editTextEndereco" />
+=======
+        app:layout_constraintTop_toBottomOf="@+id/editTextCor" />
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
 
     <EditText
         android:id="@+id/editTextDemissao"
@@ -137,12 +167,20 @@
         android:layout_marginTop="33dp"
         android:text="Salvar"
         app:layout_constraintBottom_toBottomOf="parent"
+<<<<<<< HEAD
         app:layout_constraintEnd_toStartOf="@+id/buttonCancelar"
+=======
+        app:layout_constraintEnd_toStartOf="@+id/buttonEditar"
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchAtivoOuInativo" />
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/buttonCancelar"
+=======
+        android:id="@+id/buttonEditar"
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
         android:layout_width="95dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="17dp"
@@ -153,6 +191,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonSalvar"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/switchAtivoOuInativo" />
+=======
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
 
 </android.support.constraint.ConstraintLayout>

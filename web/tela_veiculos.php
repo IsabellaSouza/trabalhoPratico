@@ -11,121 +11,115 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-                                                                                                                        <?php
-                                                                                                                   require_once('./nav.php');
-                                                                                                                   ?>
+                                <?php
+                                   require_once('./nav.php');
+                                   ?>
                                                             
  
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-													  <h1 class="header center orange-text">Cadastro de Veículo</h1>
-													  <div class="row center">
-														 <div class="row">
-															<form class="col s12">
-															  <div class="row">
-																										<div class="input-field col s6">
-																									  <input id="nome" type="text" class="validate">
-																									  <label for="nome">Nome</label>
-																										</div>
-																										
-																								
-																									<div class="input-field col s6">
-																									  <input id="placa" type="text" class="validate">
-																									  <label for="placa">Placa</label>
-																									</div>
-															 
-															  
-																										<div class="input-field col s6">
-																									  <input id="marca" type="text" class="validate">
-																									  <label for="marca">Marca</label>
-																										</div>
-																										
-																								
-																									<div class="input-field col s6">
-																									  <input id="modelo" type="text" class="validate">
-																									  <label for="modelo">Modelo</label>
-																									</div>
-																									
-																									<div class="input-field col s6">
-																									  <input id="valorDoSeguro" type="text" class="validate">
-																									  <label for="valorDoSeguro">Valor do Seguro</label>
-																										</div>
-																										
-																								
-																									<div class="input-field col s6">
-																									  <input id="valorDaLocacao" type="text" class="validate">
-																									  <label for="valorDaLocacao">Valor da Locação</label>
-																									</div>
-																									
-																									<div class="input-field col s6">
-																									  <input id="cor" type="text" class="validate">
-																									  <label for="cor">Cor</label>
-																										</div>
-																										
-																										
-																										<!-- Botao -->
-																										
-																									  <div class="switch">
-																										<label>
-																										  Desativado
-																										  <input type="checkbox">
-																										  <span class="lever"></span>
-																										  Ativo
-																										</label>
-																									  </div>
+                                  <h1 class="header center orange-text">Cadastro de Veículo</h1>
+                                  <div class="row center">
+                                     <div class="row">
+                                        <form class="col s12">
+                                          <div class="row">
+                                                <div class="input-field col s6">
+                                          <input id="nome" type="text" class="validate">
+                                          <label for="nome">Nome</label>
+                                                </div>
+
+
+                                                <div class="input-field col s6">
+                                                  <input id="placa" type="text" class="validate">
+                                                  <label for="placa">Placa</label>
+                                                </div>
+
+
+                                                 <div class="input-field col s6">
+                                                   <input id="marca" type="text" class="validate">
+                                                   <label for="marca">Marca</label>
+                                                 </div>
+
+
+                                                <div class="input-field col s6">
+                                                  <input id="modelo" type="text" class="validate">
+                                                  <label for="modelo">Modelo</label>
+                                                </div>
+
+                                                <div class="input-field col s6">
+                                                  <input id="valorDoSeguro" type="text" class="validate">
+                                                  <label for="valorDoSeguro">Valor do Seguro</label>
+                                                </div>
+
+
+                                                <div class="input-field col s6">
+                                                  <input id="valorDaLocacao" type="text" class="validate">
+                                                  <label for="valorDaLocacao">Valor da Locação</label>
+                                                </div>
+
+                                                <div class="input-field col s6">
+                                                  <input id="cor" type="text" class="validate">
+                                                  <label for="cor">Cor</label>
+                                                </div>
+
+
+                                                        <!-- Botao -->
+
+                                                  <div class="switch">
+                                                     <label>
+                                                      Desativado
+                                                      <input type="checkbox">
+                                                      <span class="lever"></span>
+                                                       Ativo
+                                                  </label>
+                                                  </div>
 															
-																									
-																											
-																											
-																										
-															  
-															  
-        
-																										  </div>
-																										  <div class="row center">
-																											<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Salvar</a>
-																										  </div>
-																										  <br><br>
+						
+                                                  </div>
+                                                  <div class="row center">
+                                                        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Salvar</a>
+                                                  </div>
+                                                  <br><br>
 
-																										</div>
-																									  </div>
-																									  
-																									  <h1 class="header center orange-text">Tabela de Veículos</h1>
-                                                                                                                                                                                                        
-																									  	<table>
-																										<thead>
-																										  <tr>
-																											  <th>Nome</th>
-																											  <th>Placa</th>
-																											  <th>Marca</th>
-																											  <th>Modelo</th>
-																											  <th>Valor do Seguro</th>
-																											  <th>Valor da Locação</th>
-																											  <th>Cor</th>
-																											  <th> Status Ativo/Desativo</th>
-																										  </tr>
-																										</thead>
+                                                  </div>
+                                                  </div>
 
-																										<tbody>
-																										  <tr>
-																											  <!-- <td></td>
-																											<td></td>
-																											<td></td>
-																										  </tr> -->
-																										  
-																										</tbody>
-																									  </table>
-																									 </div>
-																										  <div class="row center">
-																											<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Editar</a>
-																											<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Remover</a>
-																										  </div>
-																										  <br><br>
+                                                  <h1 class="header center orange-text">Tabela de Veículos</h1>
 
-																										</div>
-																									  </div>
-																									  
+                                                    <table>
+                                                    <thead>
+                                                      <tr>
+                                                      <th>Nome</th>
+                                                      <th>Placa</th>
+                                                      <th>Marca</th>
+                                                      <th>Modelo</th>
+                                                      <th>Valor do Seguro</th>
+                                                      <th>Valor da Locação</th>
+                                                      <th>Cor</th>
+                                                      <th> Status Ativo/Desativo</th>
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                  <tr>
+                                                          <!-- <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                  </tr> -->
+
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                                <div class="row center">
+                                                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Editar</a>
+                                                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Remover</a>
+                                                </div>
+                                                <br><br>
+
+                                                </div>
+                                                    </div>
+
 
 
   <div class="container">

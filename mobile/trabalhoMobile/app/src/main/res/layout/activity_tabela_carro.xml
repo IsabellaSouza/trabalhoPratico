@@ -29,47 +29,51 @@
         android:layout_marginEnd="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
+<<<<<<< HEAD
         app:layout_constraintBottom_toTopOf="@+id/buttonCancelar"
+=======
+        app:layout_constraintBottom_toTopOf="@+id/buttonEditar"
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/buttonCancelar"
         android:layout_width="wrap_content"
+=======
+        android:id="@+id/buttonEditar"
+        android:layout_width="75dp"
+>>>>>>> 899858121b609d95a15b2e1d52e23a7906057a3f
         android:layout_height="52dp"
-        android:layout_marginBottom="29dp"
+        android:layout_marginEnd="17dp"
         android:text="Editar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic"
-        tools:layout_editor_absoluteX="292dp" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonRemover"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="456dp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonRemover"
         android:layout_width="78dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="46dp"
         android:text="Remover"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonFechar"
+        app:layout_constraintStart_toEndOf="@+id/buttonEditar"
+        app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
 
     <Button
-        android:id="@+id/button5"
-        android:layout_width="55dp"
+        android:id="@+id/buttonFechar"
+        android:layout_width="78dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="47dp"
-        android:text="Voltar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="47dp"
+        android:text="Fechar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/buttonRemover"
+        tools:layout_editor_absoluteY="456dp" />
 
 </android.support.constraint.ConstraintLayout>
