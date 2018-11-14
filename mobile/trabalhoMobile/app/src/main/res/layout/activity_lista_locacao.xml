@@ -25,36 +25,36 @@
         tools:layout_editor_absoluteY="65dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonCancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Editar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/buttonRemover"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonRemover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Encerrar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFechar"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/buttonCancelar"
         app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonFechar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Remover"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button6"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintStart_toEndOf="@+id/buttonRemover"
         app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
 
     <Button
@@ -65,6 +65,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintStart_toEndOf="@+id/buttonFechar"
         app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
 </android.support.constraint.ConstraintLayout>

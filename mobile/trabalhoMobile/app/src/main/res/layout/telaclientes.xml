@@ -19,7 +19,7 @@
         tools:layout_editor_absoluteY="280dp" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/editTextCor"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -33,7 +33,7 @@
         tools:layout_editor_absoluteY="216dp" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/editTextValorDaLocacao"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -47,7 +47,7 @@
         tools:layout_editor_absoluteY="81dp" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editTextValorDoSeguro"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -61,7 +61,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -71,7 +71,7 @@
         tools:layout_editor_absoluteY="419dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonFechar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
