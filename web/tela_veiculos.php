@@ -14,8 +14,8 @@
         <?php
         require_once('./nav.php');
         require_once('./conexao.php');
-       $dados = $conn->query("select * from veiculo");
-       var_dump($dados);
+        $dados = $conn->query("select * from veiculo");
+        var_dump($dados);
         ?>
 
 
@@ -25,7 +25,7 @@
                 <h1 class="header center orange-text">Cadastro de Veículo</h1>
                 <div class="row center">
                     <div class="row">
-                        <form action="veiculos_salva.php"  method="POST" class="col s12">
+                        <form id="formVeiculo" action="veiculos_salva.php"  method="POST" class="col s12">
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input id="nome" name="nome" type="text" class="validate">
@@ -81,71 +81,72 @@
 
                             </div>
                             <div class="row center">
-                                <a  id="download-button" class="btn-large waves-effect waves-light orange" type = 'submit'>Salvar</a>
+                                <a  id="save-button" class="btn-large waves-effect waves-light orange">Salvar</a>
                             </div>
-                            <br><br>
+                        </form>
+                        <br><br>
 
-                            </div>
-                            </div>
-
-                            <h1 class="header center orange-text">Tabela de Veículos</h1>
-
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Nome</th>
-                                        <th>Placa</th>
-                                        <th>Marca</th>
-                                        <th>Modelo</th>
-                                        <th>Valor do Seguro</th>
-                                        <th>Valor da Locação</th>
-                                        <th>Cor</th>
-                                        <th> Status Ativo/Desativo</th>
-                                        <th>Ações</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <a  id="" class="btn-large waves-effect waves-light orange">Editar</a>
-                                            <a  id="" class="btn-large waves-effect waves-light orange">Remover</a></td>
-                                        <td>
-
-                                        </td>
-                                    </tr> 
-
-                                </tbody>
-                            </table>
                     </div>
-
-                    <br><br>
-
                 </div>
+
+                <h1 class="header center orange-text">Tabela de Veículos</h1>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Placa</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Valor do Seguro</th>
+                            <th>Valor da Locação</th>
+                            <th>Cor</th>
+                            <th> Status Ativo/Desativo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a  id="" class="btn-large waves-effect waves-light orange">Editar</a>
+                                <a  id="" class="btn-large waves-effect waves-light orange">Remover</a></td>
+                            <td>
+
+                            </td>
+                        </tr> 
+
+                    </tbody>
+                </table>
             </div>
 
+            <br><br>
 
-
-            <div class="container">
-                <div class="section">
-
-
-
-
-                </div>
-            </div>
         </div>
-
     </div>
-    <br><br>
+
+
+
+    <div class="container">
+        <div class="section">
+
+
+
+
+        </div>
+    </div>
+</div>
+
+</div>
+<br><br>
 </div>
 <!--rodape-->	
 <footer class="page-footer orange">

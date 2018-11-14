@@ -8,12 +8,11 @@ $modelo = $_POST['modelo'];
 $valorDoSeguro = $_POST['valorDoSeguro'];
 $valorDaLocacao = $_POST['valorDaLocacao'];
 $cor = $_POST['cor'];
-$ativo = $_POST['ativo'];
+$ativo = isset($_POST['ativo'])?"TRUE":"FALSE";
 
 
-$sql = "insert into carro (nome, placa, marca, modelo, valorDoSeguro, "
-        . "valorDaLocacao, cor, ativo) values ($nome,$placa, $marca, $modelo, $valorDoSeguro, $valorDaLocacao,"
-        . "$cor, $ativo )";
+$sql = "insert into carro (nome, placa, marca, modelo, valorSeguro, valorLocacao, cor, ativo) values ('$nome',"
+        . "'$placa', '$marca', '$modelo', '$valorDoSeguro', '$valorDaLocacao','$cor', $ativo )";
 echo $sql;
 //$conn->query($sql);
 /* 
