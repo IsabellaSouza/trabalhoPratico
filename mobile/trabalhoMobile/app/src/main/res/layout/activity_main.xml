@@ -55,7 +55,7 @@
         tools:layout_editor_absoluteY="242dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSalvar"
         android:layout_width="156dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
