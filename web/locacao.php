@@ -1,3 +1,10 @@
+<?php
+require_once('./conexao.php');
+$loc = $conn->query('select * from locacao');
+var_dump($loc);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,14 +87,34 @@ require_once('./nav.php');
                 <th>Data de Devolução</th>  
                 <th>Quilometragem</th>    
                 <th>Status</th>
+                <th>Ações</th>
             </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <!--<td></td>
-            <td></td>
-            <td></td>-->
+            <?php
+                $sql = "SELECT `pessoa`.`id`,`pessoa`.`nome`,`pessoa`.`rg`,`pessoa`.`cpf`,`funcionario`.`dataAdmissao` FROM `pessoa` INNER JOIN `funcionario` ON `pessoa`.`id`=`funcionario`.`idPessoa`";
+                $result = $conn->query($sql);
+
+                if($result->num_rows>0){
+                    while($row = $result->fetch_assoc()){
+                        echo "<tr data-id='".$row['id']."' class='linhas'>";
+                        echo "<td>".$row['id']."</td>";
+                        echo "<td>".$row['cpf']."</td>";
+                        echo "<td>".$row['nome']."</td>";
+                        echo "<td>".$row['placa']."</td>";
+                        echo "<td>".$row['dataLocacao']."</td>";
+                        echo "<td>".$row['dataDevolucao']."</td>";
+                        echo "<td>".$row['status']."</td>";
+                        echo "</tr>";
+                    }
+                }
+            ?>
+            <td>
+                <a class="waves-effect waves-light btn"><i class="material-icons left">edit</i></a>
+                <a class="waves-effect waves-light btn"><i class="material-icons left">delete</i></a>
+                <a class="waves-effect waves-light btn"><i class="material-icons left">close</i></a>
+            </td>
           </tr>
 
         </tbody>
@@ -96,12 +123,7 @@ require_once('./nav.php');
     </div>
   </div>
              
-    <div class="row center">
-        <a id="buttonEditar" class="btn-large waves-effect waves-light orange">Editar</a>
-        <a id="buttonLer" class="btn-large waves-effect waves-light orange">Ler</a>
-        <a id="buttonApagar" class="btn-large waves-effect waves-light orange">Apagar</a>
-        <a id="buttonEncerrar" class="btn-large waves-effect waves-light orange">Encerrar</a>
-    </div>
+    
   <div class="container">
     <div class="section">
 
