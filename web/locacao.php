@@ -1,10 +1,3 @@
-<?php
-require_once('./conexao.php');
-$loc = $conn->query('select * from locacao');
-var_dump($loc);
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +12,11 @@ var_dump($loc);
 </head>
 <body>
     <?php
-require_once('./nav.php');
-?>
+        require_once('./nav.php');
+        require_once('./conexao.php');
+        $loc = $conn->query('select * from locacao');
+        var_dump($loc);
+    ?>
   
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
@@ -31,26 +27,26 @@ require_once('./nav.php');
             <form class="col s12">
               <div class="row">
                 <div class="input-field col s4">
-                  <input id="dataDeLocacao" type="text" class="datepicker">
+                    <input id="dataDeLocacao" name="dataDeLocacao" type="text" class="datepicker">
                   <label for="dataDeLocacao">Data de Locação</label>
                 </div>
                 <div class="input-field col s4">
-                  <input id="dataDeDevolucao" type="text" class="datepicker">
+                    <input id="dataDeDevolucao" name="dataDeDevolucao" type="text" class="datepicker">
                   <label for="dataDeDevolucao">Data de Devolução</label>
                 </div>
                 <div class="input-field col s4">
-                  <input id="quilometragem" type="text" class="validate">
+                    <input id="quilometragem" name="quilometragem" type="text" class="validate">
                   <label for="quilometragem">Quilometragem</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s4">
-                  <input id="cpf" type="text" class="validate">
+                    <input id="cpf" name="cpf" type="text" class="validate">
                   <label for="cpf">CPF</label>
                 </div>
                 <div class="input-field col s8">
-                  <input id="nomeCliente" type="text" class="validate">
-                  <label for="nomeCliente">Nome do Cliente</label>
+                    <input id="nome" name="nome" type="text" class="validate">
+                  <label for="nome">Nome do Cliente</label>
                 </div>
               </div>
               <div class="row">
@@ -93,7 +89,7 @@ require_once('./nav.php');
 
         <tbody>
             <?php
-                $sql = "SELECT `pessoa`.`id`,`pessoa`.`nome`,`pessoa`.`rg`,`pessoa`.`cpf`,`funcionario`.`dataAdmissao` FROM `pessoa` INNER JOIN `funcionario` ON `pessoa`.`id`=`funcionario`.`idPessoa`";
+                $sql = "SELECT `locacao`.`id`,`locacao`.`nome`,`locacao`.`cpf`,`locacao`.`placa`,`locacao`.`dataLocacao`,`locacao`.`dataDevolucao`,`locacao`.`quilometragem` FROM `locacao` INNER JOIN `pessoa`,`carro` ON `locacao`.`cpf`=`pessoa`.`cpf`";
                 $result = $conn->query($sql);
 
                 if($result->num_rows>0){
@@ -105,18 +101,20 @@ require_once('./nav.php');
                         echo "<td>".$row['placa']."</td>";
                         echo "<td>".$row['dataLocacao']."</td>";
                         echo "<td>".$row['dataDevolucao']."</td>";
+                        echo "<td>".$row['quilometragem']."</td>";
                         echo "<td>".$row['status']."</td>";
+                        ?>
+                        <td>
+                            <a class="btn-small waves-effect waves-light btn"><i class="material-icons left">edit</i></a>
+                            <a class="btn-small waves-effect waves-light btn"><i class="material-icons left">delete</i></a>
+                            <a class="btn-small waves-effect waves-light btn"><i class="material-icons left">close</i></a>
+                        </td>
+                        <?php
                         echo "</tr>";
                     }
                 }
             ?>
-            <td>
-                <a class="waves-effect waves-light btn"><i class="material-icons left">edit</i></a>
-                <a class="waves-effect waves-light btn"><i class="material-icons left">delete</i></a>
-                <a class="waves-effect waves-light btn"><i class="material-icons left">close</i></a>
-            </td>
-          </tr>
-
+            
         </tbody>
         </table>
     </div>
