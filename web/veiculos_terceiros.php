@@ -23,7 +23,7 @@ $resultado_table = mysqli_query($conn, $result_table);
                 <div>
                     <h2 class="left-align">Veículos de Terceiros</h2>
                     <?php
-                    if(isset($_SESSION['msg'])){
+                    if (isset($_SESSION['msg'])) {
                         echo $_SESSION['msg'];
                         unset($_SESSION['msg']);
                     }
@@ -42,17 +42,17 @@ $resultado_table = mysqli_query($conn, $result_table);
                             <form class="col s12" method="POST" action='salvarTerceiro.php'>
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input name='nomeTerceiro' placeholder="Insira o Nome completo do Terceiro" id="nomeTerceio" type="text" class="validate">
+                                        <input name='nomeTerceiro' placeholder="Insira o Nome completo do Terceiro" id="nomeTerceio" type="text" class="validate" required="">
                                         <label for="nomeTerceiro">Nome Proprietário</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input name='rgTerceiro' placeholder="Insira o RG do Terceiro" id="rgTerceiro" type="text" class="validate">
+                                        <input name='rgTerceiro' placeholder="Insira o RG do Terceiro" id="rgTerceiro" type="text" class="validate" required="">
                                         <label for="rgTerceiro">RG Proprietário</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input name='enderecoTerceiro' placeholder="Insira o Endereço do Terceiro" id="enderecoTerceiro" type="text" class="validate">
+                                        <input name='enderecoTerceiro' placeholder="Insira o Endereço do Terceiro" id="enderecoTerceiro" type="text" class="validate" required="">
                                         <label for="enderecoTerceiro">Endereco Proprietário</label>
                                     </div>
                                 </div>
@@ -60,63 +60,71 @@ $resultado_table = mysqli_query($conn, $result_table);
                                 <div class="row">
 
                                     <div class="input-field col s6">
-                                        <input name="cpfTerceiro" placeholder="Insira o CPF do Terceiro" id="cpfTerceiro" type="text" class="validate">
+                                        <input name="cpfTerceiro" placeholder="Insira o CPF do Terceiro" id="cpfTerceiro" type="text" class="validate" required="">
                                         <label for="cpfTerceiro">CPF Proprietário</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input name="placaVeiculo" placeholder="Insira a placa do veículo do terceiro" id="placaVeiculo" type="text" class="validate" required="">
+                                        <label for="placaVeiculo">Placa Veículo</label>
                                     </div>
                                 </div>
                                 <!--DADOS DO VEÍCULO DO TERCEIRO-->
                                 <div class="row">
 
                                     <div class="input-field col s6">
-                                        <input name="placaVeiculo" placeholder="Insira a placa do veículo do terceiro" id="placaVeiculo" type="text" class="validate">
-                                        <label for="placaVeiculo">Placa Veículo</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <input name="nomeVeiculo" placeholder="Insira o nome do veículo" id="nomeVeiculo" type="text" class="validate">
+                                        <input name="nomeVeiculo" placeholder="Insira o nome do veículo" id="nomeVeiculo" type="text" class="validate" required="">
                                         <label for="nomeVeiculo">Nome do Veículo</label>
                                     </div>
-                                </div>
-                                <div class="row">
 
                                     <div class="input-field col s6">
-                                        <input name="modeloVeiculo" placeholder="Insira o modelo do veículo do terceiro" id="modeloVeiculo" type="text" class="validate">
+                                        <input name="modeloVeiculo" placeholder="Insira o modelo do veículo do terceiro" id="modeloVeiculo" type="text" class="validate" required="">
                                         <label for="modeloVeiculo">Modelo do Veículo</label>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="input-field col s6">
-                                        <input name="seguroVeiculo" placeholder="Insira o valor do seguro" id="seguroVeiculo" type="text" class="validate">
+                                        <input name="seguroVeiculo" placeholder="Insira o valor do seguro" id="seguroVeiculo" type="text" class="validate" required="">
                                         <label for="seguroVeiculo">Valor do seguro</label>
                                     </div>
-                                </div>
-                                <div class="row">
-
                                     <div class="input-field col s6">
-                                        <input name="locacaoVeiculo" placeholder="Insira valor de locação do veículo" id="locacaoVeiculo" type="text" class="validate">
+                                        <input name="locacaoVeiculo" placeholder="Insira valor de locação do veículo" id="locacaoVeiculo" type="text" class="validate" required="">
                                         <label for="locacaoVeiculo">Valor de locação</label>
                                     </div>
-                                    <div class="input-field col s6">
-                                        <input name='corVeiculo' placeholder="Insira a cor do veículo" id="corVeiculo" type="text" class="validate">
-                                        <label for="corVeiculo">Cor Veículo</label>
-                                    </div>
                                 </div>
                                 <div class="row">
 
                                     <div class="input-field col s6">
-                                        <label>
-                                            <input name='locado' type="checkbox" id="locado" />
-                                            <span>Locado?</span>
-                                        </label>
+                                        <input name='corVeiculo' placeholder="Insira a cor do veículo" id="corVeiculo" type="text" class="validate" required="">
+                                        <label for="corVeiculo">Cor Veículo</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input name='marcaVeiculo' placeholder="Insira a Marca do veículo" id="marcaVeiculo" type="text" class="validate">
+                                        <input name='marcaVeiculo' placeholder="Insira a Marca do veículo" id="marcaVeiculo" type="text" class="validate" required="">
                                         <label for="marcaVeiculo">Marca do Veículo</label>
                                     </div>
                                 </div>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                                    <i class="material-icons right">send</i>
-                                </button>
+
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <label>
+                                            <input name='locado' type="checkbox" id="locado"/>
+                                            <span>Locado?</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row" id="locadoVer">
+                                    
+                                    
+                                </div>
+                                <br>
 
 
-
+                                <div class="row">
+                                    <div class="right-align col-s12">
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -146,34 +154,32 @@ $resultado_table = mysqli_query($conn, $result_table);
                     </thead>
 
                     <tbody>
-                       <?php while($rows_table = mysqli_fetch_assoc($resultado_table)){?>
-                           <tr>
-                                <td><?php echo $rows_table['id']?></td>
-                                <td><?php echo $rows_table['nomeT']?></td>
-                                <td><?php echo $rows_table['rgT']?></td>
-                                <td><?php echo $rows_table['enderecoT']?></td>
-                                <td><?php echo $rows_table['cpfT']?></td>
-                                <td><?php echo $rows_table['placaV']?></td>
-                                <td><?php echo $rows_table['nomeV']?></td>
-                                <td><?php echo $rows_table['modeloV']?></td>
-                                <td><?php echo $rows_table['seguroV']?></td>
-                                <td><?php echo $rows_table['locacaoV']?></td>
-                                <td><?php echo $rows_table['corV']?></td>
-                                <td><?php echo $rows_table['locadoV']?></td>
-                                <td><?php echo $rows_table['marcaV']?></td>
-                                
-                           </tr>
-                       <?php
-                       }
-                       ?>
+                        <?php while ($rows_table = mysqli_fetch_assoc($resultado_table)) { ?>
+                            <tr>
+                                <td><?php echo $rows_table['id'] ?></td>
+                                <td><?php echo $rows_table['nomeT'] ?></td>
+                                <td><?php echo $rows_table['rgT'] ?></td>
+                                <td><?php echo $rows_table['enderecoT'] ?></td>
+                                <td><?php echo $rows_table['cpfT'] ?></td>
+                                <td><?php echo $rows_table['placaV'] ?></td>
+                                <td><?php echo $rows_table['nomeV'] ?></td>
+                                <td><?php echo $rows_table['modeloV'] ?></td>
+                                <td><?php echo $rows_table['seguroV'] ?></td>
+                                <td><?php echo $rows_table['locacaoV'] ?></td>
+                                <td><?php echo $rows_table['corV'] ?></td>
+                                <td><?php echo $rows_table['locadoV'] ?></td>
+                                <td><?php echo $rows_table['marcaV'] ?></td>
+
+                            </tr>
+                            <?php
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
         </div>
 
 
-        <!--FOOTER-->
-        <?php require_once('footer.php'); ?>
 
         <!--SCRIPTS-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
