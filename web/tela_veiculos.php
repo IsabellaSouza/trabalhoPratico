@@ -15,7 +15,6 @@
         require_once('./nav.php');
         require_once('./conexao.php');
         $dados = $conn->query("select * from veiculo");
-        var_dump($dados);
         ?>
 
 
@@ -31,8 +30,7 @@
                                     <input id="nome" name="nome" type="text" class="validate">
                                     <label for="nome">Nome</label>
                                 </div>
-
-
+                                <input type="hidden" id="idVeiculo" name="idVeiculo">
                                 <div class="input-field col s6">
                                     <input id="placa" name="placa" type="text" class="validate">
                                     <label for="placa">Placa</label>
@@ -81,7 +79,8 @@
 
                             </div>
                             <div class="row center">
-                                <a  id="save-button" class="btn-large waves-effect waves-light orange">Salvar</a>
+                                <button  id="save-button" name ="save-button" class="btn-large waves-effect waves-light orange">Salvar</button>
+                                <button type="submit" id="edit-button" value="1" name ="edit-button" class="btn-large waves-effect waves-light orange">Editar</button>
                             </div>
                         </form>
                         <br><br>
@@ -89,11 +88,12 @@
                     </div>
                 </div>
 
-                <h1 class="header center orange-text">Tabela de Veículos</h1>
+                <h1  id = "tabela" name ="tabela" class="header center orange-text">Tabela de Veículos</h1>
 
                 <table>
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Nome</th>
                             <th>Placa</th>
                             <th>Marca</th>
@@ -101,29 +101,31 @@
                             <th>Valor do Seguro</th>
                             <th>Valor da Locação</th>
                             <th>Cor</th>
-                            <th> Status Ativo/Desativo</th>
-                            <th>Ações</th>
+                            <th>Status Ativo/Desativo</th>
+                            
                         </tr>
                     </thead>
-
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <a  id="" class="btn-large waves-effect waves-light orange">Editar</a>
-                                <a  id="" class="btn-large waves-effect waves-light orange">Remover</a></td>
-                            <td>
-
-                            </td>
-                        </tr> 
-
+                        <?php
+                        $sql = "SELECT * FROM carro where 1";//seleciona tudo da tabela carro
+                        $result = $conn->query($sql);//executa o SQL
+                        
+                        if($result->num_rows>0){//verifica se o SQL retornou alguma linha
+                        while($linha = $result->fetch_assoc()){//percorre todo o resultado do SQL
+                            echo "<tr data-id='".$linha['id']."' class='linhas'>";
+                            echo '<td>' . $linha['id'] . '</td>';// procura a coluna da tabela escolhida
+                            echo '<td>' . $linha['nome'] . '</td>';
+                            echo '<td>' . $linha['placa'] . '</td>';
+                            echo '<td>' . $linha['marca'] . '</td>';
+                            echo '<td>' . $linha['modelo'] . '</td>';
+                            echo '<td>' . $linha['valorSeguro'] . '</td>';
+                            echo '<td>' . $linha['valorLocacao'] . '</td>';
+                            echo '<td>' . $linha['cor'] . '</td>';
+                            echo '<td>' . $linha['ativo'] . '</td>';
+                            echo '</tr>';
+                        }
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -187,6 +189,7 @@
 
 
 <!--  Scripts-->
+<script>document.getElementById("edit-button").disabled = true;</script>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
