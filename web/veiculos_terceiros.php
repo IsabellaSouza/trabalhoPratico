@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+include_once ('conexao.php');
+$result_table = "SELECT * FROM terceiros";
+$resultado_table = mysqli_query($conn, $result_table);
+?>
 <html>
     <head>
         <title>Veiculos terceiros</title>
@@ -17,6 +22,12 @@
             <div class="row">
                 <div>
                     <h2 class="left-align">Veículos de Terceiros</h2>
+                    <?php
+                    if(isset($_SESSION['msg'])){
+                        echo $_SESSION['msg'];
+                        unset($_SESSION['msg']);
+                    }
+                    ?>
                 </div>
                 <!-- Modal Triger Para Terceiros -->
                 <a class="waves-effect waves-light btn modal-trigger orange white-text" href="#modalTerceiro"><i class="material-icons left">add</i>Cadastrar</a>
@@ -27,80 +38,91 @@
                         <h3>Cadastro Veículo terceiro</h3>
                         <p>Cadastro de Veículos de terceiros.</p>
                         <div class="row">
-                            <form class="col s12">
+                            <!--DADOS PROPRIETARIO-->
+                            <form class="col s12" method="POST" action='salvarTerceiro.php'>
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input placeholder="Insira o Nome do Proprietário" id="nome_proprietario" type="text" class="validate">
-                                        <label for="nome_proprietario">Nome Proprietário</label>
+                                        <input name='nomeTerceiro' placeholder="Insira o Nome completo do Terceiro" id="nomeTerceio" type="text" class="validate">
+                                        <label for="nomeTerceiro">Nome Proprietário</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input placeholder="Insira o Sobrenome do Proprietário" id="nome_proprietario" type="text" class="validate">
-                                        <label for="nome_proprietario">Sobrenome Proprietário</label>
+                                        <input name='rgTerceiro' placeholder="Insira o RG do Terceiro" id="rgTerceiro" type="text" class="validate">
+                                        <label for="rgTerceiro">RG Proprietário</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input placeholder="Insira o Endereço do Proprietário" id="endereco_proprietario" type="text" class="validate">
-                                        <label for="endereco_proprietario">Endereco Proprietário</label>
+                                        <input name='enderecoTerceiro' placeholder="Insira o Endereço do Terceiro" id="enderecoTerceiro" type="text" class="validate">
+                                        <label for="enderecoTerceiro">Endereco Proprietário</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input placeholder="Insira o RG do Proprietário" id="rg_proprietario" type="text" class="validate">
-                                        <label for="rg_proprietario">RG Proprietário</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <input placeholder="Insira o Telefone do Proprietário" id="telefone_proprietario" type="text" class="validate">
-                                        <label for="telefone_proprietario">Telefone Proprietário</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input placeholder="Ex: Onix LTZ" id="modelo_veiculo" type="text" class="validate">
-                                        <label for="modelo_veiculo">Modelo Veículo</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <input placeholder="Ex: Fiat" id="marca_veiculo" type="text" class="validate">
-                                        <label for="marca_veiculo">Marca</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input placeholder="Ex: AAA-0000" id="placa_veiculo" type="text" class="validate">
-                                        <label for="placa_veiculo">Placa</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <input placeholder="Ex: Do dia 01/10/2018 ao dia 05/10/2018" id="disponibilidade_veiculo" type="text" class="validate">
-                                        <label for="disponibilidade_veiculo">Disponibilidade</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input placeholder="Ex: R$ 2500,00" id="seguro_veiculo" type="text" class="validate">
-                                        <label for="seguro_veiculo">Seguro</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <input placeholder="Ex: R$ 50,00" id="locacao_veiculo" type="text" class="validate">
-                                        <label for="locacao_veiculo">Locação Diária</label>
-                                    </div>
 
-                                </div>
                                 <div class="row">
-                                    <div class="input-field col s12">
-                                        <textarea id="observacao" class="materialize-textarea"></textarea>
-                                        <label for="observacao_veiculo">Observações</label>
+
+                                    <div class="input-field col s6">
+                                        <input name="cpfTerceiro" placeholder="Insira o CPF do Terceiro" id="cpfTerceiro" type="text" class="validate">
+                                        <label for="cpfTerceiro">CPF Proprietário</label>
                                     </div>
                                 </div>
+                                <!--DADOS DO VEÍCULO DO TERCEIRO-->
+                                <div class="row">
+
+                                    <div class="input-field col s6">
+                                        <input name="placaVeiculo" placeholder="Insira a placa do veículo do terceiro" id="placaVeiculo" type="text" class="validate">
+                                        <label for="placaVeiculo">Placa Veículo</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input name="nomeVeiculo" placeholder="Insira o nome do veículo" id="nomeVeiculo" type="text" class="validate">
+                                        <label for="nomeVeiculo">Nome do Veículo</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="input-field col s6">
+                                        <input name="modeloVeiculo" placeholder="Insira o modelo do veículo do terceiro" id="modeloVeiculo" type="text" class="validate">
+                                        <label for="modeloVeiculo">Modelo do Veículo</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input name="seguroVeiculo" placeholder="Insira o valor do seguro" id="seguroVeiculo" type="text" class="validate">
+                                        <label for="seguroVeiculo">Valor do seguro</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="input-field col s6">
+                                        <input name="locacaoVeiculo" placeholder="Insira valor de locação do veículo" id="locacaoVeiculo" type="text" class="validate">
+                                        <label for="locacaoVeiculo">Valor de locação</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input name='corVeiculo' placeholder="Insira a cor do veículo" id="corVeiculo" type="text" class="validate">
+                                        <label for="corVeiculo">Cor Veículo</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="input-field col s6">
+                                        <label>
+                                            <input name='locado' type="checkbox" id="locado" />
+                                            <span>Locado?</span>
+                                        </label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input name='marcaVeiculo' placeholder="Insira a Marca do veículo" id="marcaVeiculo" type="text" class="validate">
+                                        <label for="marcaVeiculo">Marca do Veículo</label>
+                                    </div>
+                                </div>
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                    <i class="material-icons right">send</i>
+                                </button>
+
+
 
                             </form>
                         </div>
                     </div>
 
 
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat green-text">Cadastrar</a>
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat red-text">Cancelar</a>
-                    </div>
+
                 </div>
             </div>
             <div class="row">
@@ -109,33 +131,41 @@
                         <tr>
                             <th>Id</th>
                             <th>Nome</th>
-                            <th>Sobrenome</th>
-                            <th>Endereco</th>
                             <th>RG</th>
-                            <th>Telefone</th>
-                            <th>Placa</th>
+                            <th>Endereco</th>
+                            <th>CPF</th>
+                            <th>Placa Veículo</th>
+                            <th>Nome Veículo</th>
+                            <th>Modelo</th>
+                            <th>Valor Seguro</th>
+                            <th>Valor Locação</th>
+                            <th>Cor</th>
+                            <th>Locado</th>
                             <th>Marca</th>
-                            <th>Seguro</th>
-                            <th>Locação</th>
-                            <th>Disponibilidadeo</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <th>0</th>
-                            <th>Rodrigo</th>
-                            <th>de Jesus Claus</th>
-                            <th>Vilson Gabiatti, 3100</th>
-                            <th>000000.0</th>
-                            <th>Onix ltz</th>
-                            <th>AAA-0000</th>
-                            <th>Fiat</th>
-                            <th>R$3400,00</th>
-                            <th>R$50,00</th>
-                            <th>Do dia 01/10/2018 a 31/10/2018</th>
-                        </tr>
-
+                       <?php while($rows_table = mysqli_fetch_assoc($resultado_table)){?>
+                           <tr>
+                                <td><?php echo $rows_table['id']?></td>
+                                <td><?php echo $rows_table['nomeT']?></td>
+                                <td><?php echo $rows_table['rgT']?></td>
+                                <td><?php echo $rows_table['enderecoT']?></td>
+                                <td><?php echo $rows_table['cpfT']?></td>
+                                <td><?php echo $rows_table['placaV']?></td>
+                                <td><?php echo $rows_table['nomeV']?></td>
+                                <td><?php echo $rows_table['modeloV']?></td>
+                                <td><?php echo $rows_table['seguroV']?></td>
+                                <td><?php echo $rows_table['locacaoV']?></td>
+                                <td><?php echo $rows_table['corV']?></td>
+                                <td><?php echo $rows_table['locadoV']?></td>
+                                <td><?php echo $rows_table['marcaV']?></td>
+                                
+                           </tr>
+                       <?php
+                       }
+                       ?>
                     </tbody>
                 </table>
             </div>
