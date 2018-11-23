@@ -75,14 +75,10 @@
 
 
 
-
-
-
-
-
                             </div>
                             <div class="row center">
-                                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Salvar</a>
+                                 <button  id="botao_salvar" name ="botao_salvar" class="btn-large waves-effect waves-light orange">Salvar</button>
+                                <button type="submit" id="botao_editar" value="1" name ="botao_editar" class="btn-large waves-effect waves-light orange">Editar</button>
 
                             </div>
                             <br><br>
@@ -106,19 +102,33 @@
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                            <!-- <td></td>
-                                          <td></td>
-                                          <td></td>
-                                    </tr> -->
+                                   <?php
+                                   //mudar para pessoa/funcionario
+                        $sql = "SELECT * FROM carro where 1";//mudar para pessoa
+                        $result = $conn->query($sql);//executa o SQL
+                        
+                        if($result->num_rows>0){//verifica se o SQL retornou alguma linha
+                        while($linha = $result->fetch_assoc()){//percorre todo o resultado do SQL
+                            echo "<tr data-id='".$linha['id']."' class='linhas'>";
+                            echo '<td>' . $linha['nome'] . '</td>';// procura a coluna da tabela escolhida
+                            echo '<td>' . $linha['rg'] . '</td>';
+                            echo '<td>' . $linha['cpf'] . '</td>';
+                            echo '<td>' . $linha['endereco'] . '</td>';
+                            echo '<td>' . $linha['data_admissao'] . '</td>';
+                            echo '<td>' . $linha['data_demissao'] . '</td>';
+                            echo '<td>' . $linha['status'] . '</td>';
+  
+                            echo '</tr>';
+                        }
+                        }
+                        ?>
 
                                 </tbody>
                             </table>
 
                     </div>
                     <div class="row center">
-                        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Editar</a>
-                        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Remover</a>
+                       
 
                     </div>
                     <br><br>
