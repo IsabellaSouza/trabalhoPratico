@@ -22,39 +22,40 @@
                 <br><br>
                 <h1 class="header center orange-text">Cadastro de Funcionários</h1>
                 <div class="row center">
+                    <form id="formFuncionarios" action="cadastro_funcionarios_salvar.php"  method="POST" class="col s12">
                     <div class="row">
                         <form class="col s12">
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="nome" type="text" class="validate">
+                                    <input id="nome" name ="nome" type="text" class="validate">
                                     <label for="nome">NOME</label>
                                 </div>
 
 
                                 <div class="input-field col s6">
-                                    <input id="rg" type="text" class="validate">
+                                    <input id="rg" name ="rg" type="text" class="validate">
                                     <label for="rg">RG</label>
                                 </div>
 
 
                                 <div class="input-field col s6">
-                                    <input id="cpf" type="text" class="validate">
+                                    <input id="cpf" name ="cpf" type="text" class="validate">
                                     <label for="cpf">CPF</label>
                                 </div>
 
 
                                 <div class="input-field col s6">
-                                    <input id="endereco" type="text" class="validate">
+                                    <input id="endereco" name ="endereco" type="text" class="validate">
                                     <label for="endereco">ENDEREÇO</label>
                                 </div>
 
                                 <div class="input-field col s6">
-                                    <input id="data_admicao" type="text" class="datepicker">
+                                    <input id="data_admissao" name ="data_admissao" type="text" class="datepicker">
                                     <label for="data_admissao">Data de Admissão</label>
                                 </div>
 
                                 <div class="input-field col s6">
-                                    <input id="data_demicao" type="text" class="datepicker">
+                                    <input id="data_demissao" name ="data_demissao" type="text" class="datepicker">
                                     <label for="data_demissao">Data de Demissão</label>
                                 </div>
 
