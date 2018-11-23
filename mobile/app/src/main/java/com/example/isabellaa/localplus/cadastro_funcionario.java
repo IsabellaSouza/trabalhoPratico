@@ -1,5 +1,6 @@
 package com.example.isabellaa.localplus;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,14 +12,9 @@ public class cadastro_funcionario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_funcionario);
     }
+public void SairCadastroFuncionario(View view){
 
-    public void NovoFuncionario(View view){
+        finish();
+}
 
-
-    }
-
-    public void SairFuncionario(View view){
-
-
-    }
 }
