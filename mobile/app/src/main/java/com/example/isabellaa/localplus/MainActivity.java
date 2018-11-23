@@ -18,8 +18,31 @@ public class MainActivity extends AppCompatActivity {
         Intent it = new Intent(this,tabela_carro.class);
         startActivity(it);
     }
+
+    void Abrirtabela_locacao(View view){
+        Intent it = new Intent(this,tabela_locacao.class);
+        startActivity(it);
+    }
+
+    void Abrirtabela_funcionario(View view){
+
+        Intent it = new Intent(this,tabela_funcionario.class);
+        startActivity(it);
+    }
+
+    void Abrirtabela_cliente(View view){
+        Intent it = new Intent(this,tabela_cliente.class);
+        startActivity(it);
+    }
+
+    void Abririnovacao(View view){
+
+        Intent it = new Intent(this,inovacao.class);
+        startActivity(it);
+    }
     void Sairmain(View view){
 
         finish();
     }
+
 }
