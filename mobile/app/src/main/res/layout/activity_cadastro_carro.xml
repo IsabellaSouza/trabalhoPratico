@@ -117,6 +117,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/switchAtivo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextValorDaLocacaoCarro" />
 
@@ -126,11 +127,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:textOff="Inativo"
         android:textOn="Ativo"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRemoverCarro"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="447dp" />
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonSalvarCarro"
@@ -149,7 +152,7 @@
         android:id="@+id/buttonEditarCarro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
         android:text="Editar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -159,7 +162,6 @@
         android:id="@+id/buttonRemoverCarro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
         android:layout_marginBottom="8dp"
         android:text="Remover"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -170,7 +172,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="Cancelar"
         android:text="Sair"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
