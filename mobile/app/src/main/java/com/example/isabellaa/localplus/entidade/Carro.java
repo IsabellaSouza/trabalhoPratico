@@ -80,7 +80,7 @@ public class Carro implements Serializable {
         this.cor = cor;
     }
 
-    public boolean isAtivo() {
+    public boolean getAtivo() {
         return ativo;
     }
 
@@ -96,5 +96,7 @@ public class Carro implements Serializable {
         return false;
     }
     public String toString(){return "Placa:" +getPlaca()+"\nNome:"+getNome()+"\nMarca:"+getMarca()+"\nModelo:"+getModelo()+
-    "\nValor do Seguro:"+getValorDoSeguro() + "\nValor da Locação:"+getValorDaLocacao()+"\nCor:"+getCor();}
+    "\nValor do Seguro:"+getValorDoSeguro() + "\nValor da Locação:"+getValorDaLocacao()+"\nCor:"+getCor()+"\nAtivo: "+getAtivo();}
+
+
 }
