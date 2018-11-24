@@ -1,8 +1,9 @@
 package com.example.isabellaa.localplus.entidade;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Funcionario {
+public class Funcionario implements Serializable{
     private Integer id;
     private String nome;
     private String rg;

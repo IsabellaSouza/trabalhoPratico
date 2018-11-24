@@ -79,9 +79,8 @@ public class tabela_funcionario extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent it = new Intent(tabela_funcionario.this,cadastro_funcionario.class);
                 Funcionario funcionario= (Funcionario) adapterView.getItemAtPosition(i);
-               // mexer nisso dps  it.putExtra("funcionario",funcionario);
+                it.putExtra("funcionario",funcionario);
                 startActivity(it);
-
             }
         });
 
@@ -96,7 +95,7 @@ public class tabela_funcionario extends AppCompatActivity {
     }
 
 
-    public void NovoFuncionario(View view){
+    public void NovoFuncionarios(View view){
         Intent it = new Intent(tabela_funcionario.this,cadastro_funcionario.class);
         startActivity(it);
     }

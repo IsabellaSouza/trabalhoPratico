@@ -12,8 +12,6 @@ public class Banco extends SQLiteOpenHelper {
   String sql = "CREATE TABLE IF NOT EXISTS CARRO(" +"ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +"PLACA VARCHAR(7)," +"NOME VARCHAR(50),"+ "MARCA VARCHAR(50),"+"MODELO VARCHAR(50),"+ "VALORDOSEGURO FLOAT,"+"VALORDALOCACAO FLOAT, "+"COR VARCHAR(20), "+"ATIVO BOOLEAN)";
    sqLiteDatabase.execSQL(sql);
 
-
-
         sqLiteDatabase.execSQL(sql);
     }
 

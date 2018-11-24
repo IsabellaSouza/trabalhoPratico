@@ -22,14 +22,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonNovoFuncionario"
+        android:id="@+id/buttonNovoFuncionarios"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="3dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="NovoFuncionario"
+        android:onClick="NovoFuncionarios"
         android:text="Novo"
         app:layout_constraintBottom_toTopOf="@+id/_dynamic"
         app:layout_constraintEnd_toStartOf="@+id/buttonEditarFuncionarios"
@@ -47,7 +46,7 @@
         android:text="Editar"
         app:layout_constraintBottom_toTopOf="@+id/_dynamic"
         app:layout_constraintEnd_toStartOf="@+id/buttonRemoverFuncionarios"
-        app:layout_constraintStart_toEndOf="@+id/buttonNovoFuncionario"
+        app:layout_constraintStart_toEndOf="@+id/buttonNovoFuncionarios"
         app:layout_constraintTop_toBottomOf="@+id/textViewTabelaFuncionario" />
 
     <Button
