@@ -19,7 +19,9 @@ public class Banco extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        String sql="ALTER TABLE CARRO ADD PLACA VARCHAR(7);";
 
+        sqLiteDatabase.execSQL(sql);
 
     }
 }

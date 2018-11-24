@@ -25,15 +25,15 @@ public class tabela_carro extends AppCompatActivity {
     private ListView lista;
     private SQLiteDatabase conexao;
 
-    private List lista(){
-
-        List carro =  new LinkedList();
+    private List listar(){
+        conexao = bd.getReadableDatabase();
+        List carros =  new LinkedList();
         Cursor res = conexao.rawQuery("SELECT * FROM CARRO", null);
         if(res.getCount()>0){
             res.moveToFirst();
             do{
                 Carro c = new Carro();
-                Toast.makeText(this, ""+res.getString(res.getColumnIndex("Placa")), Toast.LENGTH_SHORT).show();
+                c.setId(res.getInt(res.getColumnIndexOrThrow("ID")));
                 c.setPlaca(res.getString(res.getColumnIndexOrThrow("PLACA")));
                 c.setNome(res.getString(res.getColumnIndexOrThrow("NOME")));
                 c.setMarca(res.getString(res.getColumnIndexOrThrow("MARCA")));
@@ -43,30 +43,31 @@ public class tabela_carro extends AppCompatActivity {
                 c.setCor(res.getString(res.getColumnIndexOrThrow("COR")));
             //    c.setAtivo((res.getColumnIndexOrThrow("ATIVO")));
 
-                carro.add(c);
+                carros.add(c);
             }while (res.moveToNext());
         }
-        return carro;
+        return carros;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabela_carro);
+        buttonSairCarro=findViewById(R.id.buttonSalvarCarro);
         lista = findViewById(R.id.listaCarros);
         conexaoBD();
         acoes();
     }
-
+    private Banco bd;
     private void conexaoBD() {
         try {
-
+            bd = new Banco(this);
             Toast.makeText(this, "Conexão Ok!", Toast.LENGTH_SHORT).show();
         }catch (SQLException e){
             AlertDialog.Builder msg = new AlertDialog.Builder(this);
             msg.setTitle("Erro");
-            msg.setMessage("Erro ao conectar ao Banco");
-            msg.setNeutralButton("Ok",null);
+            msg.setMessage("Erro no banco");
+            msg.setNegativeButton("Ok",null);
             msg.show();
         }
     }
@@ -74,13 +75,28 @@ public class tabela_carro extends AppCompatActivity {
     private void acoes() {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Intent it = new Intent(tabela_carro.this, cadastro_carro.class);
-                Carro carro =  (Carro) adapterView.getItemAtPosition(position);
-                it.putExtra("carro", carro);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent it = new Intent(tabela_carro.this,cadastro_carro.class);
+                Carro carro= (Carro) adapterView.getItemAtPosition(i);
+                it.putExtra("carro",carro);
                 startActivity(it);
+                /*Bundle bundle = new Bundle();
+                bundle.putSerializable("carro",carro);
+                it.putExtras(bundle);*/
+                // it.putExtras("carro", carro);
             }
         });
+
+
+
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        ArrayAdapter<Carro> arrayAdapter = new ArrayAdapter<Carro>(this,android.R.layout.simple_list_item_1, listar());
+        lista.setAdapter(arrayAdapter);
     }
 
     void SairTabelaCarro(View view){
@@ -88,7 +104,7 @@ public class tabela_carro extends AppCompatActivity {
     }
 
     void Novocadastro_carro(View view){
-        Intent it = new Intent(this,cadastro_carro.class);
+        Intent it = new Intent(tabela_carro.this,cadastro_carro.class);
         startActivity(it);
     }
     void EditarTabelaCarro(View view){
@@ -101,12 +117,7 @@ public class tabela_carro extends AppCompatActivity {
 
 
 
-    protected void onResume() {
-        super.onResume();
 
-        ArrayAdapter<Carro> arrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, lista());
-        lista.setAdapter(arrayAdapter);
-    }
 
 
 
