@@ -41,8 +41,8 @@
               </div>
               <div class="row">
                 <div class="input-field col s4">
-                    <input id="cpf_pessoa" name="cpf_pessoa" type="text" class="validate">
-                  <label for="cpf_pessoa">CPF</label>
+                    <input id="cpf_locacao" name="cpf_locacao" type="text" class="validate">
+                  <label for="cpf_locacao">CPF</label>
                 </div>
                 <div class="input-field col s4">
                   <input id="placa_carro" name="placa_carro" type="text" class="validate">

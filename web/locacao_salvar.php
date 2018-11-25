@@ -1,11 +1,10 @@
 <?php
-header("Location: ./locacao.php");
 
 
 
 include './conexao.php';
 $editar = $_POST['buttonEditar'];
-$cpf = $_POST['cpf_pessoa'];
+$cpf = $_POST['cpf_locacao'];
 $placa = $_POST['placa_carro'];
 $dataLocacao = $_POST['dataLocacao'];
 $dataDevolucao = $_POST['dataDevolucao'];
@@ -25,6 +24,7 @@ if ($editar == 0) {
     $conn->query($sql);
 }
 
+header("Location: ./locacao.php");
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
