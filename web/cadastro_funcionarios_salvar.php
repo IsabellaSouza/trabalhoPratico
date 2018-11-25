@@ -10,11 +10,14 @@ $cpf = $_POST['cpf'];
 $endereco = $_POST['endereco'];
 $data_admissao = $_POST['data_admissao'];
 $data_demissao = $_POST['data_demissao'];
+
 $status = isset($_POST['status']) ? "TRUE" : "FALSE";
 if ($edit == 0) {
-    $sql = "insert into funcionario (nome, placa, marca, modelo, valorSeguro, valorLocacao, cor, ativo) values ('$nome',"
-            . "'$placa', '$marca', '$modelo', '$valorDoSeguro', '$valorDaLocacao','$cor', $ativo )";
-    $conn->query($sql);
+   $sql = "INSERT INTO pessoa(nome, rg, cpf, endereco) VALUES ('$nome', '$rg', '$cpf', '$endereco')";
+            $result = $conn->query($sql);
+            $ultimo = mysqli_insert_id($conn);
+            $sql = "INSERT INTO cliente(data_admissao, data_demissao,supervisor ,idPessoa) VALUES ('$data_admissao', '$data_demissao','0','$ultimo')";
+            $result = $conn->query($sql);
 } else {
     $sql = "UPDATE carro SET placa='$placa', nome='$nome',modelo='$modelo',valorSeguro='$valorDoSeguro',valorLocacao='$valorDaLocacao',cor='$cor',ativo='$ativo',marca='$marca' WHERE id='$idVeiculo'";
     $conn->query($sql);

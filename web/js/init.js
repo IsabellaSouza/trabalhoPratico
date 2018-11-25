@@ -48,6 +48,19 @@
         document.getElementById("edit-button").disabled = false;
 
     });
+    $('.linhasFuncionario').click(function () {
+        $('#id').val($(this).find(":nth-child(0)").html());
+        $('#nome').val($(this).find(":nth-child(1)").html());
+        $('#rg').val($(this).find(":nth-child(2)").html());
+        $('#cpf').val($(this).find(":nth-child(3)").html());
+        $('#endereco').val($(this).find(":nth-child(4)").html());
+        $('#data_admissao').val($(this).find(":nth-child(5)").html());
+        $('#data_demissao').val($(this).find(":nth-child(6)").html());
+        $('#valorDaLocacao').val($(this).find(":nth-child(7)").html());
+        document.getElementById("botao_salvar").disabled = true;
+        document.getElementById("botao_editar").disabled = false;
+
+    });
 
 
 })(jQuery); // end of jQuery name space

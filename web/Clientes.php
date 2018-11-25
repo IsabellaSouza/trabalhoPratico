@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>Starter Template - Materialize</title>
+    <title>Cadastro de Clientes</title>
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,127 +11,161 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-<nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <ul id="nav-mobile" class="sidenav">
-            <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-</nav>
+<?php
+require_once('./nav.php');
+require_once('./conexao.php');
+$dados = $conn->query("select * from cliente");
+?>
 
-<div class="row">
-    <form class="col s12">
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="nome" type="text" class="validate">
-                <label for="nome">Nome</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="sobrenome" type="text" class="validate">
-                <label for="sobrenome">Sobrenome</label>
+
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br><br>
+        <h1 class="header center orange-text">Cadastro de Cliente</h1>
+        <div class="row center">
+            <div class="row">
+                <form id="formCLiente" action="cliente_salva.php"  method="POST" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="nome" name="nome" type="text" class="validate">
+                            <label for="nome">Nome</label>
+                        </div>
+                        <input type="hidden" id="idcliente" name="idcliente">
+                        <div class="input-field col s6">
+                            <input id="rg" name="rg" type="text" class="validate">
+                            <label for="rg">rg</label>
+                        </div>
+
+
+                        <div class="input-field col s6">
+                            <input id="cpf" name="cpf" type="text" class="validate">
+                            <label for="cpf">CPF</label>
+                        </div>
+
+
+                        <div class="input-field col s6">
+                            <input id="endereco" name="endereco" type="text" class="validate">
+                            <label for="modelo">Endereço</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input id="numeroDependentes" name="numeroDependentes" type="text" class="validate">
+                            <label for="numeroDependentes">numeroDependentes</label>
+                        </div>
+
+                        <!-- Botao -->
+
+
+                    </div>
+                    <div class="row center">
+                        <button  id="save-button" name ="save-button" class="btn-large waves-effect waves-light orange">Salvar</button>
+                        <button type="submit" id="edit-button" value="1" name ="edit-button" class="btn-large waves-effect waves-light orange">Editar</button>
+                    </div>
+                </form>
+                <br><br>
+
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="endereco" type="text" class="validate">
-                <label for="endereco">Endereço</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="senha" type="password" class="validate">
-                <label for="senha">Senha</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
-            </div>
-        </div>
-    </form>
+
+        <h1  id = "tabela" name ="tabela" class="header center orange-text">Tabela de Clientes</h1>
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>RG</th>
+                <th>CPF</th>
+                <th>Endereço</th>
+                <th>CNH</th>
+                <th>Numero de Dependentes</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $sql = "SELECT * FROM pessoa INNER JOIN cliente on pessoa.id = cliente.id";//seleciona tudo da tabela carro
+            $result = $conn->query($sql);//executa o SQL
+
+            if($result->num_rows>0){//verifica se o SQL retornou alguma linha
+                while($linha = $result->fetch_assoc()){//percorre todo o resultado do SQL
+                    echo "<tr data-id='".$linha['id']."' class='linhas'>";
+                    echo '<td>' . $linha['id'] . '</td>';// procura a coluna da tabela escolhida
+                    echo '<td>' . $linha['nome'] . '</td>';
+                    echo '<td>' . $linha['rg'] . '</td>';
+                    echo '<td>' . $linha['cpf'] . '</td>';
+                    echo '<td>' . $linha['endereco'] . '</td>';
+                    echo '<td>' . $linha['cnh'] . '</td>';
+                    echo '<td>' . $linha['numeroDependentes'] . '</td>';
+                    echo '</tr>';
+                }
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+
+    <br><br>
+
 </div>
 
-<table>
-    <thead>
-    <tr>
-        <th>Nome</th>
-        <th>Sobrenome</th>
-        <th>Telefone</th>
-        <th>Endereço</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Felipe</td>
-        <td>Rdorigues</td>
-        <td>0000-0000</td>
-        <td>Rua X</td>
-    </tr>
-    <tr>
-        <td>Rodrigo</td>
-        <td>Claus</td>
-        <td>0000-0000</td>
-        <td>Rua Y</td>
-    </tr>
-    <tr>
-        <td>Lucas</td>
-        <td>Pires</td>
-        <td>0000-0000</td>
-        <td>Rua Z</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    </tbody>
-</table>
 
+
+<div class="container">
+    <div class="section">
+
+
+
+
+    </div>
+</div>
+</div>
+
+</div>
+<br><br>
+</div>
+<!--rodape-->
 <footer class="page-footer orange">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Company Bio</h5>
-                <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's
-                    our full time job. Any amount would help support and continue development on this project and is
-                    greatly appreciated.</p>
+                <h5 class="white-text"></h5>
+                <p class="grey-text text-lighten-4"></p>
+
+
             </div>
             <div class="col l3 s12">
-                <h5 class="white-text">Settings</h5>
+                <h5 class="white-text"></h5>
                 <ul>
-                    <li><a class="white-text" href="#!">Link 1</a></li>
-                    <li><a class="white-text" href="#!">Link 2</a></li>
-                    <li><a class="white-text" href="#!">Link 3</a></li>
-                    <li><a class="white-text" href="#!">Link 4</a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                    <li><a class="white-text" href="#!"></a></li>
                 </ul>
             </div>
             <div class="col l3 s12">
-                <h5 class="white-text">Connect</h5>
+                <h5 class="white-text"></h5>
                 <ul>
-                    <li><a class="white-text" href="#!">Link 1</a></li>
-                    <li><a class="white-text" href="#!">Link 2</a></li>
-                    <li><a class="white-text" href="#!">Link 3</a></li>
-                    <li><a class="white-text" href="#!">Link 4</a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                    <li><a class="white-text" href="#!"></a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
         <div class="container">
-            Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            <a class="orange-text text-lighten-3" href="http://materializecss.com"></a>
         </div>
     </div>
 </footer>
+
+
 <!--  Scripts-->
+<script>document.getElementById("edit-button").disabled = true;</script>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
-<!--https://github.com/IsabellaSouza/trabalhoPratico.git-->
+
 </body>
 </html>
