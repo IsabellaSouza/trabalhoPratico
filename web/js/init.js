@@ -61,7 +61,30 @@
         document.getElementById("botao_editar").disabled = false;
 
     });
+    
+    $(function () {
+        $('#buttonSalvar').click(function () {//funções para os botões salvar e editar.
+            $('#formLocacao').submit();
+        });
+        $('#buttonEditar').click(function () {
 
+        });
+
+        $('.sidenav').sidenav();
+
+    });
+
+    $('.linhas1').click(function () {//Função para quando clicar na linha da tabela exibir os dados nos campos.
+        $('#idLocacao').val($(this).find(":nth-child(0)").html());
+        $('#cpf_locacao').val($(this).find(":nth-child(1)").html());
+        $('#placa_carro').val($(this).find(":nth-child(2)").html());
+        $('#dataLocacao').val($(this).find(":nth-child(3)").html());
+        $('#dataDevolucao').val($(this).find(":nth-child(4)").html());
+        $('#quilometragem').val($(this).find(":nth-child(5)").html());
+        $('#ativo').val($(this).find(":nth-child(6)").html());
+        document.getElementById("buttonSalvar").disabled = true;
+        document.getElementById("buttonEditar").disabled = false;
+    });
 
 })(jQuery); // end of jQuery name space
 

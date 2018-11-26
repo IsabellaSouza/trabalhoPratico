@@ -36,8 +36,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void Abririnovacao(View view){
-
         Intent it = new Intent(this,inovacao.class);
+        startActivity(it);
+    }
+    void Abrirtabela_inocavao(View view){
+
+        Intent it = new Intent(this,tabela_terceiros.class);
         startActivity(it);
     }
     void Sairmain(View view){

@@ -14,14 +14,14 @@ $ativo = isset($_POST['ativo']) ? "TRUE" : "FALSE";
 
 
 if ($editar == 0) {
-    $sql = "insert into locacao (dataLocacao, dataDevolucao, quilometragem, cpf_locacao, placa_carro, ativo) "
+    $sql = "insert into locacao (dataLocacao, dataDevolucao, quilometragem, cpf_locacao, placa_carro, ativo) "//comando SQL para inserção no banco de dados.
             . "values ('$dataLocacao', '$dataDevolucao', '$quilometragem', '$cpf', '$placa', '$ativo' )";
-    $conn->query($sql);
+    $conn->query($sql); //executa o SQL.
 } else {
-    $sql = "UPDATE locacao SET dataLocacao='$dataLocacao', dataDevolucao='$dataDevolucao', "
+    $sql = "UPDATE locacao SET dataLocacao='$dataLocacao', dataDevolucao='$dataDevolucao', "//comando para atualizar o banco de dados.
             . "quilometragem='$quilometragem', cpf_locacao='$cpf', placa_carro='$placa', "
-            . "ativo='$ativo' WHERE id='$idLocacao'";
-    $conn->query($sql);
+            . "ativo='$ativo' WHERE id='$idLocacao";
+    $conn->query($sql);//EXECUTA O SQL.
 }
 
 header("Location: ./locacao.php");

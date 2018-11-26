@@ -9,9 +9,8 @@ include './conexao.php';
                     while($loc = mysql_fetch_assoc($loc))
                     {
                         echo '<tr>';
-                        echo '<td>'. $loc['id'] .'</td>';
                         echo '<td>'. $loc['cpf_locacao'] .'</td>';
-                        echo '<td>'. $loc['placa_placa'] .'</td>';
+                        echo '<td>'. $loc['placa_carro'] .'</td>';
                         echo '<td>'. $loc['dataLocacao'] .'</td>';
                         echo '<td>'. $loc['dataDevolucao'] .'</td>';
                         echo '<td>'. $loc['quilometragem'] .'</td>';

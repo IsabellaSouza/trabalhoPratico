@@ -25,7 +25,11 @@
         <activity android:name=".inovacao" />
         <activity android:name=".locacao" />
         <activity android:name=".tabela_locacao" />
+<<<<<<< HEAD
         <activity android:name=".editar_carro"></activity>
+=======
+        <activity android:name=".tabela_terceiros"></activity>
+>>>>>>> 9bfa886458c86d8b718a9c6f8d74b40a1f67ccb3
     </application>
 
 </manifest>

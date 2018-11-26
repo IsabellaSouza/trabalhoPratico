@@ -6,4 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".tabela_locacao">
 
+    <TextView
+        android:id="@+id/textViewTabelaLocacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Tabela de Locações"
+        android:textColor="#E47833"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonNovoLocacoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Novo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTabelaLocacao" />
+
+    <Button
+        android:id="@+id/buttonEditarLocacoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Editar"
+        app:layout_constraintStart_toEndOf="@+id/buttonNovoLocacoes"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTabelaLocacao" />
+
+    <Button
+        android:id="@+id/buttonRemoverLocacoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Remover"
+        app:layout_constraintStart_toEndOf="@+id/buttonEditarLocacoes"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTabelaLocacao" />
+
+    <Button
+        android:id="@+id/buttonSairLocacoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="buttonSairTabelaLocacao"
+        android:text="Sair"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonRemoverLocacoes"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTabelaLocacao" />
+
+    <ListView
+        android:layout_width="368dp"
+        android:layout_height="399dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEditarLocacoes" />
 </android.support.constraint.ConstraintLayout>
