@@ -24,7 +24,8 @@
         <activity android:name=".tabela_funcionario" />
         <activity android:name=".inovacao" />
         <activity android:name=".locacao" />
-        <activity android:name=".tabela_locacao"></activity>
+        <activity android:name=".tabela_locacao" />
+        <activity android:name=".editar_carro"></activity>
     </application>
 
 </manifest>

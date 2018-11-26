@@ -17,7 +17,7 @@ import com.example.isabellaa.localplus.persistência.Banco;
 
 public class cadastro_carro extends AppCompatActivity {
 
-
+//Declaração
     private Carro carro;
     private EditText placa;
     private EditText nome;
@@ -31,7 +31,7 @@ public class cadastro_carro extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_carro);
+        setContentView(R.layout.activity_cadastro_carro); // pegando informações da tela cadastro_carro
         placa = findViewById(R.id.editTextPlacaCarro);
         nome= findViewById(R.id.editTextNomeCarro);
         marca = findViewById(R.id.editTextMarcaCarro);
@@ -41,9 +41,9 @@ public class cadastro_carro extends AppCompatActivity {
         cor = findViewById(R.id.editTextCor);
         ativo = findViewById(R.id.switchAtivo);
 
-        carro = (Carro) getIntent().getSerializableExtra("carro");
+        carro = (Carro) getIntent().getSerializableExtra("CARRO");
         if(carro!=null){
-        placa.setText(carro.getPlaca());
+        placa.setText(carro.getPlaca());     // pegando informações
         nome.setText(carro.getNome());
         marca.setText(carro.getMarca());
         modelo.setText(carro.getModelo());
@@ -58,7 +58,7 @@ public class cadastro_carro extends AppCompatActivity {
             if (carro == null) carro = new  Carro();
         carro.setNome(nome.getText().toString());
         carro.setPlaca(placa.getText().toString());
-        carro.setMarca(marca.getText().toString());
+        carro.setMarca(marca.getText().toString());            //Implementação do Botão Salvar setando os valores
         carro.setModelo(modelo.getText().toString());
         carro.setValorDoSeguro(Float.parseFloat(valordoseguro.getText().toString()));
         carro.setValorDaLocacao(Float.parseFloat(valordalocacao.getText().toString()));
@@ -67,7 +67,7 @@ public class cadastro_carro extends AppCompatActivity {
         inserir();
         finish();
     }}
-
+//validando se os dados foram digitados
     private boolean valida() {
         if(TextUtils.isEmpty(placa.getText())){
             Toast.makeText(this,"Entre com a Placa!",Toast.LENGTH_LONG).show();
@@ -107,13 +107,12 @@ public class cadastro_carro extends AppCompatActivity {
 
         return true;
     }
-
-
+    //estabelecendo conexao
     private SQLiteDatabase conexao;
     private Banco bd;
     private void inserir(){
         bd = new Banco(this);
-
+//banco
         String sql= "INSERT INTO CARRO(PLACA,NOME,MARCA,MODELO,VALORDOSEGURO,VALORDALOCACAO,COR,ATIVO )VALUES('"+carro.getPlaca()+"'," +
                 "'"+carro.getNome()+"',"+carro.getMarca()+"',"+carro.getModelo()+"',"+carro.getValorDoSeguro()+"',"+carro.getValorDaLocacao()+"',"+carro.getCor()+"',"+carro.getAtivo()+")";
         try {
@@ -138,12 +137,10 @@ public class cadastro_carro extends AppCompatActivity {
             Toast.makeText(this, "Erro na inserção!", Toast.LENGTH_SHORT).show();
         }
     }
-
+//fechando tela pelo botao Cancelar
     public void Cancelar(View view){
         finish();
     }
-
-
     }
 
 

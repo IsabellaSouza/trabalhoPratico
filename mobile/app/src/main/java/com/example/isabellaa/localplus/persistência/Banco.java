@@ -27,7 +27,7 @@ public class Banco extends SQLiteOpenHelper {
         String sql="ALTER TABLE CARRO ADD PLACA VARCHAR(7);";
         String sqlcliente="ALTER TABLE CLIENTE ADD NOME VARCHAR(7)";
         sqLiteDatabase.execSQL(sql);
-        
+
         sqLiteDatabase.execSQL(sqlcliente);
     }
 

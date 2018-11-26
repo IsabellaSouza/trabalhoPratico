@@ -24,6 +24,7 @@ public class tabela_carro extends AppCompatActivity {
     private Button buttonSairCarro;
     private ListView lista;
     private SQLiteDatabase conexao;
+//listando valores
 
     private List listar(){
         conexao = bd.getReadableDatabase();
@@ -48,16 +49,40 @@ public class tabela_carro extends AppCompatActivity {
         }
         return carros;
     }
+    //estabelecendo conexao
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabela_carro);
-        buttonSairCarro=findViewById(R.id.buttonSalvarCarro);
         lista = findViewById(R.id.listaCarros);
         conexaoBD();
         acoes();
+
+
     }
+    //aqui era pra dar pra clicar na lista e abrir outra para editar...
+    private void acoes() {
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent it = new Intent(tabela_carro.this,editar_carro.class);
+                Carro carro= (Carro) adapterView.getItemAtPosition(i);
+                it.putExtra("ID", carro.getId());
+                it.putExtra("PLACA",carro.getPlaca());
+                it.putExtra("NOME", carro.getNome());
+                it.putExtra("MARCA", carro.getMarca());
+                it.putExtra("MODELO", carro.getModelo());
+                it.putExtra("VALORDOSEGURO", carro.getValorDoSeguro());
+                it.putExtra("VALORDALOCACAO", carro.getValorDaLocacao());
+                it.putExtra("COR", carro.getCor());
+                it.putExtra("ATIVO", carro.getAtivo());
+                startActivity(it);
+            }
+        });
+    }
+//vendo se a conexao esta ok
+
     private Banco bd;
     private void conexaoBD() {
         try {
@@ -72,25 +97,7 @@ public class tabela_carro extends AppCompatActivity {
         }
     }
 
-    private void acoes() {
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent it = new Intent(tabela_carro.this,cadastro_carro.class);
-                Carro carro= (Carro) adapterView.getItemAtPosition(i);
-                it.putExtra("carro",carro);
-                startActivity(it);
-                /*Bundle bundle = new Bundle();
-                bundle.putSerializable("carro",carro);
-                it.putExtras(bundle);*/
-                // it.putExtras("carro", carro);
-            }
-        });
 
-
-
-
-    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -98,22 +105,29 @@ public class tabela_carro extends AppCompatActivity {
         ArrayAdapter<Carro> arrayAdapter = new ArrayAdapter<Carro>(this,android.R.layout.simple_list_item_1, listar());
         lista.setAdapter(arrayAdapter);
     }
-
+//fechando a tela pelo botao Sair
     void SairTabelaCarro(View view){
         finish();
     }
 
+    //Abrindo tela de novo cadastro
     void Novocadastro_carro(View view){
         Intent it = new Intent(tabela_carro.this,cadastro_carro.class);
         startActivity(it);
     }
+    //Aqui era pra clicar no botao de editar para editar, mas por fim nem precisou pq tentei fazer de modo que clicasse na lista
     void EditarTabelaCarro(View view){
-
+        Intent it = new Intent(tabela_carro.this,editar_carro.class);
+        startActivity(it);
 
     }
+    //remover nao foi implementado, pois
+    //muito dos colegas disseram que nao fariam e que dava erro no banco quando tentava apagar
     void RemoverTabelaCarro(View view){
-
+//mostra na tela a mensagem quando clica em remover
+        Toast.makeText(this, "Não Implementado pois BUGA o Banco",Toast.LENGTH_LONG).show();;
     }
+
 
 
 
