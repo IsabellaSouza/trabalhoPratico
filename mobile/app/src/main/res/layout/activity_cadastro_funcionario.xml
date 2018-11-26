@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".cadastro_funcionario">
 
+
     <TextView
         android:id="@+id/textViewCadastroFuncionario"
         android:layout_width="wrap_content"
@@ -121,23 +122,27 @@
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginStart="92dp"
         android:layout_marginTop="8dp"
         android:onClick="buttonSalvarFuncionario"
         android:text="Salvar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchStatus"
-        tools:layout_editor_absoluteX="90dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchStatus" />
 
     <Button
         android:id="@+id/buttonSairFuncionario"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:onClick="SairCadastroFuncionario"
         android:text="Sair"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchStatus"
-        tools:layout_editor_absoluteX="192dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonSalvarFuncionario"
+        app:layout_constraintTop_toBottomOf="@+id/switchStatus" />
 
 </android.support.constraint.ConstraintLayout>
