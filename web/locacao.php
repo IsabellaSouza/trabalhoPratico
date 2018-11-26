@@ -87,13 +87,13 @@
 
         <tbody>
             <?php
-                $sql = "SELECT * FROM locacao";
-                $res = $conn->query($sql);
+                $sql = "SELECT * FROM locacao";//seleciona tudo da tabela locação
+                $res = $conn->query($sql);//executa o  SQL
                 
-                if($res->num_rows>0){
-                    while($row = $res->fetch_assoc()){
-                        echo "<tr data-id='".$row['id']."'class='linhas1'>";
-                        echo "<td>".$row['id']."</td>";
+                if($res->num_rows>0){//verifica se o SQL retornou alguma linha
+                    while($row = $res->fetch_assoc()){//percorre todo o resultado do SQL
+                        echo "<tr data-id='".$row['idLocacao']."'class='linhas1'>";
+                        echo "<td>".$row['idLocacao']."</td>";//procura a coluna da tabela escolhida
                         echo "<td>".$row['cpf_locacao']."</td>";
                         echo "<td>".$row['placa_carro']."</td>";
                         echo "<td>".$row['dataLocacao']."</td>";
