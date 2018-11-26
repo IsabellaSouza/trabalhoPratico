@@ -1,6 +1,8 @@
 <?php
 session_start();
 include_once ('conexao.php');
+    
+$id = filter_input(INPUT_POST,'idTerceiro',FILTER_SANITIZE_NUMBER_INT);
 $nomeTerceiro = filter_input(INPUT_POST,'nomeTerceiro',FILTER_SANITIZE_STRING);
 $rgTerceiro = filter_input(INPUT_POST,'rgTerceiro',FILTER_SANITIZE_STRING);
 $enderecoTerceiro = filter_input(INPUT_POST,'enderecoTerceiro',FILTER_SANITIZE_STRING);
@@ -14,10 +16,10 @@ $corVeiculo=filter_input(INPUT_POST,'corVeiculo',FILTER_SANITIZE_STRING);
 $locado=filter_input(INPUT_POST,'locado',FILTER_SANITIZE_STRING);
 $marcaVeiculo=filter_input(INPUT_POST,'marcaVeiculo',FILTER_SANITIZE_STRING);
 
-$result_terceiros = "INSERT INTO terceiros (nomeT,rgT,enderecoT,cpfT,placaV,nomeV,modeloV,seguroV,locacaoV,corV,locadoV,marcaV) VALUES('$nomeTerceiro','$rgTerceiro','$enderecoTerceiro','$cpfTerceiro','$placaVeiculo','$nomeVeiculo','$modeloVeiculo','$seguroVeiculo','$locacaoVeiculo','$corVeiculo','$locado','$marcaVeiculo')";
-$resultado_terceiro = mysqli_query($conn,$result_terceiros);
-if(mysqli_insert_id($conn)){
-    $_SESSION['msg']= "<p class='green-text'>Cadastrado com sucesso!</p>";
+$result_t = "UPDATE terceiros SET NomeT='$nomeTerceiro',rgT='$rgTerceiro',enderecoT='$enderecoTerceiro',cpfT='$cpfTerceiro',placaV='$placaVeiculo',nomeV='$nomeVeiculo',modeloV='$modeloVeiculo',seguroV='$seguroVeiculo',locacaoV='$locacaoVeiculo',corV='$corVeiculo',locadoV='$locado',marcaV='$marcaVeiculo' WHERE id='$id'";
+$resultado= mysqli_query($conn,$result_t);
+if(mysqli_affected_rows($conn)){
+    $_SESSION['msg']= "<p class='green-text'>Editado com sucesso!</p>";
     header("Location: veiculos_terceiros.php");
 }else{
     echo "Erro";

@@ -15,7 +15,7 @@
         require_once('./nav.php');
         require_once('./conexao.php');
         $loc = $conn->query('select * from locacao');
-        var_dump($loc);
+        //var_dump($loc);
     ?>
   
   <div class="section no-pad-bot" id="index-banner">
@@ -24,48 +24,49 @@
       <h1 class="header center orange-text">Locação</h1>
       <div class="row center">
         <div class="row">
-            <form class="col s12">
+            <form id="formLocacao" action="locacao_salvar.php"  method="POST" class="col s12">
               <div class="row">
                 <div class="input-field col s4">
-                    <input id="dataDeLocacao" name="dataDeLocacao" type="text" class="datepicker">
-                  <label for="dataDeLocacao">Data de Locação</label>
+                    <input id="dataLocacao" name="dataLocacao" type="date">
+                  <label for="dataLocacao">Data de Locação</label>
                 </div>
                 <div class="input-field col s4">
-                    <input id="dataDeDevolucao" name="dataDeDevolucao" type="text" class="datepicker">
-                  <label for="dataDeDevolucao">Data de Devolução</label>
+                    <input id="dataDevolucao" name="dataDevolucao" type="date">
+                  <label for="dataDevolucao">Data de Devolução</label>
                 </div>
                 <div class="input-field col s4">
-                    <input id="quilometragem" name="quilometragem" type="text" class="validate">
+                    <input id="quilometragem" name="quilometragem" type="number" class="validate">
                   <label for="quilometragem">Quilometragem</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s4">
-                    <input id="cpf" name="cpf" type="text" class="validate">
-                  <label for="cpf">CPF</label>
+                    <input id="cpf_locacao" name="cpf_locacao" type="text" class="validate">
+                  <label for="cpf_locacao">CPF</label>
                 </div>
-                <div class="input-field col s8">
-                    <input id="nome" name="nome" type="text" class="validate">
-                  <label for="nome">Nome do Cliente</label>
-                </div>
-              </div>
-              <div class="row">
                 <div class="input-field col s4">
-                  <select>
-                    <option value="" disabled selected>Veículo placa</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                  </select>
-                  <label>Veículo </label>
+                  <input id="placa_carro" name="placa_carro" type="text" class="validate">
+                  <label for="placa_carro">Placa do Veículo</label>
                 </div>
+                
+                  <div class="switch">
+                      <label>
+                          Em andamento
+                          <input name="ativo" type="checkbox">
+                          <span class="lever"></span>
+                          Encerrado
+                      </label>
+                  </div>
               </div>
+              
               
             </form>
           </div>
       </div>
       <div class="row center">
-        <a id="buttonSalvar" class="btn-large waves-effect waves-light orange">Salvar</a>
+          
+        <button id="buttonSalvar" name="buttonSalvar" class="btn-large waves-effect waves-light orange">Salvar</button>
+        <button type="submit" id="buttonEditar" value="1" name="buttonEditar" class="btn-large waves-effect waves-light orange">Editar</button>
         
       </div>
       
@@ -77,39 +78,27 @@
             <tr>
                 <th>ID</th>
                 <th>CPF</th>
-                <th>Nome do Cliente</th>  
                 <th>Veículo Placa</th>  
                 <th>Data de Locação</th>  
                 <th>Data de Devolução</th>  
                 <th>Quilometragem</th>    
-                <th>Status</th>
-                <th>Ações</th>
             </tr>
         </thead>
 
         <tbody>
             <?php
-                $sql = "SELECT `locacao`.`id`,`locacao`.`nome`,`locacao`.`cpf`,`locacao`.`placa`,`locacao`.`dataLocacao`,`locacao`.`dataDevolucao`,`locacao`.`quilometragem` FROM `locacao` INNER JOIN `pessoa`,`carro` ON `locacao`.`cpf`=`pessoa`.`cpf`";
-                $result = $conn->query($sql);
-
-                if($result->num_rows>0){
-                    while($row = $result->fetch_assoc()){
-                        echo "<tr data-id='".$row['id']."' class='linhas'>";
+                $sql = "SELECT * FROM locacao";
+                $res = $conn->query($sql);
+                
+                if($res->num_rows>0){
+                    while($row = $res->fetch_assoc()){
+                        echo "<tr data-id='".$row['id']."'class='linhas1'>";
                         echo "<td>".$row['id']."</td>";
-                        echo "<td>".$row['cpf']."</td>";
-                        echo "<td>".$row['nome']."</td>";
-                        echo "<td>".$row['placa']."</td>";
+                        echo "<td>".$row['cpf_locacao']."</td>";
+                        echo "<td>".$row['placa_carro']."</td>";
                         echo "<td>".$row['dataLocacao']."</td>";
                         echo "<td>".$row['dataDevolucao']."</td>";
                         echo "<td>".$row['quilometragem']."</td>";
-                        echo "<td>".$row['status']."</td>";
-                        ?>
-                        <td>
-                            <a class="btn-small waves-effect waves-light btn"><i class="material-icons left">edit</i></a>
-                            <a class="btn-small waves-effect waves-light btn"><i class="material-icons left">delete</i></a>
-                            <a class="btn-small waves-effect waves-light btn"><i class="material-icons left">close</i></a>
-                        </td>
-                        <?php
                         echo "</tr>";
                     }
                 }
@@ -165,6 +154,7 @@
 
 
   <!--  Scripts-->
+  <script>document.getElementById("buttonEditar").disabled = true;</script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>

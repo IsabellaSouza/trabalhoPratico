@@ -105,16 +105,18 @@ $resultado_table = mysqli_query($conn, $result_table);
 
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <label>
-                                            <input name='locado' type="checkbox" id="locado"/>
-                                            <span>Locado?</span>
-                                        </label>
+                                        <div class="input-field col s12">
+                                            <select name="locado" id="locado">
+                                                <option value="" disabled selected>Escolha a Opção</option>
+                                                <option value="Sim">Sim</option>
+                                                <option value="Não">Não</option>
+
+                                            </select>
+                                            <label>Locado?</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row" id="locadoVer">
-                                    
-                                    
-                                </div>
+                                
                                 <br>
 
 
@@ -133,6 +135,8 @@ $resultado_table = mysqli_query($conn, $result_table);
 
                 </div>
             </div>
+
+            <div class="div-teste">sdfwe</div>
             <div class="row">
                 <table class="centered highlight">
                     <thead>
@@ -155,20 +159,22 @@ $resultado_table = mysqli_query($conn, $result_table);
 
                     <tbody>
                         <?php while ($rows_table = mysqli_fetch_assoc($resultado_table)) { ?>
-                            <tr>
-                                <td><?php echo $rows_table['id'] ?></td>
-                                <td><?php echo $rows_table['nomeT'] ?></td>
-                                <td><?php echo $rows_table['rgT'] ?></td>
-                                <td><?php echo $rows_table['enderecoT'] ?></td>
-                                <td><?php echo $rows_table['cpfT'] ?></td>
-                                <td><?php echo $rows_table['placaV'] ?></td>
-                                <td><?php echo $rows_table['nomeV'] ?></td>
-                                <td><?php echo $rows_table['modeloV'] ?></td>
-                                <td><?php echo $rows_table['seguroV'] ?></td>
-                                <td><?php echo $rows_table['locacaoV'] ?></td>
-                                <td><?php echo $rows_table['corV'] ?></td>
-                                <td><?php echo $rows_table['locadoV'] ?></td>
-                                <td><?php echo $rows_table['marcaV'] ?></td>
+                            <?php
+                            echo "<tr data-id=" . $rows_table['id'] . " class='linha'>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['id'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['nomeT'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['rgT'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['enderecoT'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['cpfT'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['placaV'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['nomeV'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['modeloV'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['seguroV'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['locacaoV'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['corV'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['locadoV'] . "</a></td>";
+                            echo "<td><a class='modal-trigger' href='edit_terceiro.php?id=" . $rows_table['id'] . "'>" . $rows_table['marcaV'] . "</a></td>";
+                            ?>
 
                             </tr>
                             <?php
@@ -181,8 +187,9 @@ $resultado_table = mysqli_query($conn, $result_table);
 
 
 
-        <!--SCRIPTS-->
+        <!--SCRIPTS-->[
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/preencherModal.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
     </body>
