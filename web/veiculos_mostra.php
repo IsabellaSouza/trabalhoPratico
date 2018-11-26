@@ -1,4 +1,5 @@
 <?php
+// mostrando os dados
 include './conexao.php';
                     echo '<table>';
                     echo '<tr>';

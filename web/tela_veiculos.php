@@ -13,7 +13,7 @@
     <body>
         <?php
         require_once('./nav.php');
-        require_once('./conexao.php');
+        require_once('./conexao.php'); // estabelecendo conexao e pegando do banco veiculo
         $dados = $conn->query("select * from veiculo");
         ?>
 
